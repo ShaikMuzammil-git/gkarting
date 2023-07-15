@@ -1,0 +1,44 @@
+/* Media Frames */
+
+@media (max-width: 1392px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+/* @media (max-width: 992px) {
+  html {
+    font-size: 9px;
+  }
+} */
+
+/* @media (max-width: 700px) {      */
+@media (max-width: 992px) {
+  html {
+    font-size: 8px;
+  }
+  .pic {
+    width: 100vw;
+    height: auto;
+  }
+  .pic2 {
+    margin: 0;
+  }
+  .about_us_txt {
+    padding: 1rem 2rem;
+  }
+  #survey-form {
+    width: 90%;
+  }
+  .contacts {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding-top: 2rem;
+    margin: auto;
+  }
+
+  .contacts a {
+    margin-top: 0.5rem;
+  }
+}
