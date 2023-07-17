@@ -64,7 +64,7 @@
       <img class="pic pic4" src="./images/PIC 5.jpg" alt="image collage" />
       <h2>RULE BOOK FOR G KARTING</h2>
       <br />
-      <a class="downloadPdfBtn" href="./images/PIC 1.jpg" download
+      <a class="downloadPdfBtn" href="./images/rulebook.pdf" download
         >DOWNLOAD HERE &nbsp;
         <i class="fa fa-file-pdf-o" style="font-size: 3rem"></i>
       </a>
@@ -111,54 +111,72 @@
       <img class="pic pic9" src="./images/PIC 9.jpg" alt="event_Image" />
       <h3>REGISTER HERE NOW</h3>
       <br />
-      <form id="survey-form">
-        <label id="name-label" for="name">NAME</label>
-        <input
-          type="text"
-          name="name"
-          id="name"
-          class="form-control"
-          placeholder=""
-          required
-        />
-        <label id="number-label" for="number">PHONE NUMBER</label>
-        <input
-          type="number"
-          name="number"
-          id="number"
-          class="form-control"
-          placeholder=""
-          required
-        />
-        <label id="email-label" for="email">E-MAIL</label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          class="form-control"
-          placeholder=""
-          required
-        />
-        <label id="team-label" for="team">TEAM NAME</label>
-        <input
-          type="text"
-          name="team"
-          id="team"
-          class="form-control"
-          placeholder=""
-          required
-        />
-        <label id="college-label" for="team">COLLEGE NAME, CITY</label>
-        <input
-          type="text"
-          name="college"
-          id="college"
-          class="form-control"
-          placeholder=""
-          required
-        />
-        <div onclick="SubForm()" id="submitBtn" class="submitBtn">SUBMIT</div>
-      </form>
+
+      <div class="formSection">
+        <form id="survey-form1">
+          <div class="form-group1">
+            <label id="name-label" for="name">Name</label>
+            <input
+              type="text"
+              name="name"
+              id="name1"
+              class="form-control1"
+              placeholder=""
+              required
+            />
+          </div>
+          <div class="form-group1">
+            <label id="number-label" for="number">Number</label>
+            <input
+              type="number"
+              name="number"
+              id="number1"
+              class="form-control1"
+              placeholder=""
+              required
+            />
+          </div>
+          <div class="form-group1">
+            <label id="email-label" for="email">Email</label>
+            <input
+              name="email"
+              id="email1"
+              class="form-control1"
+              placeholder=""
+              required
+            />
+          </div>
+          <div class="form-group1">
+            <label id="team-label" for="team">Team</label>
+            <input
+              type="text"
+              name="team"
+              id="team1"
+              class="form-control1"
+              placeholder=""
+              required
+            />
+          </div>
+          <div class="form-group1">
+            <label id="colegecity-label" for="collegecity"
+              >College , City</label
+            >
+            <input
+              type="text"
+              name="name"
+              id="collegecity1"
+              class="form-control1"
+              placeholder=""
+              required
+            />
+          </div>
+        </form>
+        <div class="form-group1">
+          <button onclick="SubForm1()" id="submitBtn1" class="submit-button">
+            Submit
+          </button>
+        </div>
+      </div>
       <img class="pic pic12" src="./images/12.jpg" alt="event_Image" />
       <br />
       <hr />
@@ -177,8 +195,23 @@
           <i class="fa fa-whatsapp"></i
           ><span class="header-text">&nbsp; +91 901-975-1239</span></a
         >
-        <a><i class="fa fa-instagram"></i></a>
-        <a><i class="fa fa-facebook"></i></a>
+        <a
+          class="floatingIcon"
+          href="https://api.whatsapp.com/send?phone=919019751239"
+          target="_blank"
+        >
+          <i class="fa fa-whatsapp"></i
+        ></a>
+        <a
+          href="https://instagram.com/gkartingco?igshid=MzNlNGNkZWQ4Mg=="
+          target="_blank"
+          ><i class="fa fa-instagram"></i> Follow us on Instagram</a
+        >
+        <a
+          href="https://www.facebook.com/profile.php?id=100094740043513&mibextid=ZbWKwL"
+          target="_blank"
+          ><i class="fa fa-facebook"></i>&nbsp; Follow us on Facebook</a
+        >
       </div>
       <div id="submitConfirmation">
         <div id="submitConfirmationBox">
@@ -192,5 +225,22 @@
       </div>
     </section>
     <script src="g_motors.js"></script>
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbyH9syVKhEKMIdbCuHgaStv3FcsgI98Gb8mhf5RV2Nqyppkucm-Dgc6WFXTImBr-LE0rQ/exec";
+      const form = document.forms["contactform"];
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) =>
+            alert("Thank you! your form is submitted successfully.")
+          )
+          .then(() => {
+            window.location.reload();
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
   </body>
 </html>
