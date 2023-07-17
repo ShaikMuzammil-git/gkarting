@@ -18,7 +18,7 @@ function SubForm1() {
     collegecity != ""
   ) {
     document.getElementById("submitConfirmation").style.display = "block";
-    document.getElementById("submitBtn").innerHTML = "Thank You";
+    document.getElementById("submitBtn1").innerHTML = "Thank You";
     var url =
       script_url +
       "?callback=ctrlq&collegecity=" +
@@ -41,4 +41,8 @@ function SubForm1() {
   } else {
     alert("Please fill all the form details to submit");
   }
+}
+
+function closeSubmitConfirmationBox() {
+  document.getElementById("submitConfirmation").style.display = "none";
 }
