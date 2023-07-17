@@ -279,4 +279,5 @@ a:hover {
   height: auto;
   border-radius: 50%;
   background-color: green;
+  border: none;
 }
