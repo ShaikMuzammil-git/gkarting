@@ -1,31 +1,30 @@
 /* sending visitors form data to Recruiter Panel */
 var script_url =
-  "https://script.google.com/macros/s/AKfycbxTUVbSNrZqJMucvi7h8dI_y6zBQPtcMVEqOGoSYfpkE75GaeqNo5CtTr9QtTbybGQ/exec";
+  "https://script.google.com/macros/s/AKfycbxBHsT1RODcOpENQijdnmcKJYLCrVAOLq3H8OvBAn46_-qUsirictD5wHVS2KgdM1Bd/exec";
 
 // Make an AJAX call to Google Script ( for Form in CONTACT US section)
-
-function SubForm() {
-  var name = $("#name").val();
-  var number = $("#number").val();
-  var email = $("#email").val();
-  var team = $("#team").val();
-  var college = $("#college").val();
+function SubForm1() {
+  var name = $("#name1").val();
+  var number = $("#number1").val();
+  var email = $("#email1").val();
+  var team = $("#team1").val();
+  var collegecity = $("#collegecity1").val();
 
   if (
     name != "" &&
     number !== "" &&
     email != "" &&
-    team !== "" &&
-    college != ""
+    team != "" &&
+    collegecity != ""
   ) {
     document.getElementById("submitConfirmation").style.display = "block";
     document.getElementById("submitBtn").innerHTML = "Thank You";
     var url =
       script_url +
-      "?callback=ctrlq&college=" +
-      college +
-      "?callback=ctrlq&number=" +
-      number +
+      "?callback=ctrlq&collegecity=" +
+      collegecity +
+      "?callback=ctrlq&team=" +
+      team +
       "?callback=ctrlq&email=" +
       email +
       "?callback=ctrlq&number=" +
@@ -42,8 +41,4 @@ function SubForm() {
   } else {
     alert("Please fill all the form details to submit");
   }
-}
-
-function closeSubmitConfirmationBox() {
-  document.getElementById("submitConfirmation").style.display = "none";
 }
